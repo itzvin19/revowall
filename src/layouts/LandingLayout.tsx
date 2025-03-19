@@ -48,7 +48,7 @@ function LandingLayout() {
 						className="w-3/4 md:w-1/2 block xl:hidden"
 					>
 						<img
-							src="/favicon.svg"
+							src="/img/logoWhite.svg"
 							alt="Logo de Revowall"
 							className="w-full h-full"
 						/>
