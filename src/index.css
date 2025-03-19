@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+@theme {
+	--color-blue-revowall: #022161;
+	--color-green-revowall: #38a74c;
+	--color-green-hover-light: #88ca94;
+	--color-gray-revowall: #f6f7f9;
+	--color-black-revowall: #1a1a1a;
+	--font-display: "Poppins", "sans-serif";
+	--default-font-family: "Poppins", "sans-serif";
+}
+
+@font-face {
+	font-family: "Poppins";
+	src: url("/fonts/Poppins-Bold.woff2") format("woff2");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Poppins";
+	src: url("/fonts/Poppins-Italic.woff2") format("woff2");
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Poppins";
+	src: url("/fonts/Poppins-Regular.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Poppins";
+	src: url("/fonts/Poppins-SemiBoldItalic.woff2") format("woff2");
+	font-weight: 600;
+	font-style: italic;
+	font-display: swap;
+}
+
+:root {
+	--gradient-bg-hero: linear-gradient(
+		to right,
+		rgba(2, 33, 97, 1) 0%,
+		rgba(2, 33, 97, 1) 33%,
+		rgba(2, 33, 97, 0) 80%,
+		rgba(2, 33, 97, 0) 100%
+	);
+	--gradient-bg-nosotros: linear-gradient(
+			to right,
+			rgba(255, 255, 255, 1) 0%,
+			rgba(255, 255, 255, 1) 16%,
+			rgba(255, 255, 255, 0) 75%,
+			rgba(255, 255, 255, 0) 100%
+		),
+		linear-gradient(
+			to top,
+			rgba(255, 255, 255, 1) 0%,
+			rgba(255, 255, 255, 0) 30%,
+			rgba(255, 255, 255, 0) 100%
+		);
+	--gradient-bg-equipo: linear-gradient(
+		to right,
+		rgb(2, 33, 97) 0%,
+		rgba(2, 33, 97, 1) 18%,
+		rgba(2, 33, 97, 0) 100%
+	);
+}
+.hero {
+	object-position: default;
+}
+
+.nosotros {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 200px center;
+}
+
+.equipo {
+	background-size: cover;
+	background-position: 250px -40px;
+	background-repeat: repeat-y;
+}
+
+.swiper-pagination-bullet {
+	height: 15px !important;
+	width: 15px !important;
+}
+
+.swiper-pagination-bullet-active {
+	background: #38a74c !important;
+}
+
+@media (max-width: 1280px) {
+	:root {
+		--gradient-bg-hero: linear-gradient(
+			to bottom,
+			rgba(2, 33, 97, 0.5),
+			rgba(2, 33, 97, 1)
+		);
+
+		--gradient-bg-nosotros: linear-gradient(
+				to right,
+				rgba(255, 255, 255, 1) 0%,
+				rgba(255, 255, 255, 1) 16%,
+				rgba(255, 255, 255, 0) 50%,
+				rgba(255, 255, 255, 0) 100%
+			),
+			linear-gradient(
+				to bottom,
+				rgba(255, 255, 255, 1) 0%,
+				rgba(255, 255, 255, 1) 55%,
+				rgba(255, 255, 255, 0) 70%,
+				rgba(255, 255, 255, 0) 100%
+			),
+			linear-gradient(
+				to top,
+				rgba(255, 255, 255, 1) 0%,
+				rgba(255, 255, 255, 0) 20%,
+				rgba(255, 255, 255, 0) 100%
+			);
+
+		--gradient-bg-equipo: linear-gradient(
+			to bottom,
+			rgba(2, 33, 97, 1) 0%,
+			rgba(2, 33, 97, 1) 60%,
+			rgba(2, 33, 97, 0.2) 100%
+		);
+	}
+
+	.hero {
+		background-position: calc(100% + 100px);
+	}
+
+	.nosotros {
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: calc(100% + 100px) bottom;
+	}
+
+	.equipo {
+		background-size: contain;
+		background-position: center bottom;
+		background-repeat: no-repeat;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+	:root {
+		--gradient-bg-nosotros: linear-gradient(
+			to bottom,
+			rgb(255, 255, 255),
+			rgb(255, 255, 255)
+		);
+		--gradient-bg-equipo: linear-gradient(
+			to bottom,
+			rgba(2, 33, 97, 1) 0%,
+			rgba(2, 33, 97, 1) 40%,
+			rgba(2, 33, 97, 0.2) 100%
+		);
+	}
+	.hero {
+		background-position: calc(100%);
+	}
+}
+
+@media (min-width: 1536px) {
+	:root {
+		--gradient-bg-equipo: linear-gradient(
+			to right,
+			rgb(2, 33, 97) 0%,
+			rgba(2, 33, 97, 1) 40%,
+			rgba(2, 33, 97, 0) 100%
+		);
+	}
+
+	.equipo {
+		background-size: cover;
+		background-position: calc(100% + 160px) calc(100% + 550px);
+	}
+}
