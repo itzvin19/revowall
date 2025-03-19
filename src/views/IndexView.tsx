@@ -20,10 +20,18 @@ import AtencionPersonalizada from "../icons/AtencionPersonalizada";
 import Compromiso from "../icons/Compromiso";
 import Experiencia from "../icons/Experiencia";
 import Garantias from "../icons/Garantias";
+import { Helmet } from "react-helmet-async";
 
 function IndexView() {
 	return (
 		<>
+			<Helmet>
+				<title>Inicio | RevoWall</title>
+				<meta
+					name="description"
+					content="RevoWall: Expertos en Drywall Americano. Transformamos tus espacios con calidad y precisión. Soluciones personalizadas para proyectos residenciales y comerciales. ¡Contáctanos!"
+				/>
+			</Helmet>
 			<HeroSection
 				backgroundImg="/img/index/IndexCover.webp"
 				showLinks={true}
@@ -205,7 +213,7 @@ function IndexView() {
 									className="w-full h-full object-cover absolute top-0 left-0 duration-150 group-hover:scale-110"
 								/>
 							</div>
-							<Link to={constants.proyectosLink}>
+							<Link to={constants.proyectosLink} aria-label="Ir a proyectos">
 								<div className="bg-white absolute right-0 bottom-0 z-10 size-16 md:size-20 xl:size-24 pt-2 xl:pt-3 pl-2 xl:pl-3">
 									<div className="bg-blue-revowall group-hover:bg-green-revowall duration-150 h-full text-white flex items-center justify-center p-3 md:p-4 xl:p-6">
 										<Flecha />
@@ -224,7 +232,7 @@ function IndexView() {
 										className="w-full h-full object-cover absolute top-0 left-0 duration-150 group-hover:scale-110"
 									/>
 								</div>
-								<Link to={constants.proyectosLink}>
+								<Link to={constants.proyectosLink} aria-label="Ir a proyectos">
 									<div className="bg-white absolute right-0 bottom-0 z-10 size-8 md:size-12 xl:size-16 2xl:size-18 pt-1 xl:pt-3 pl-1 xl:pl-3">
 										<div className="bg-blue-revowall duration-150 group-hover:bg-green-revowall h-full text-white flex items-center justify-center p-1.5 md:p-2 xl:p-3">
 											<Flecha />
@@ -240,7 +248,7 @@ function IndexView() {
 										className="w-full h-full object-cover absolute top-0 left-0 duration-150 group-hover:scale-110"
 									/>
 								</div>
-								<Link to={"/proyectos"}>
+								<Link to={"/proyectos"} aria-label="Ir a proyectos">
 									<div className="bg-white absolute right-0 bottom-0 z-10 size-8 md:size-12 xl:size-16 2xl:size-18 pt-1 xl:pt-3 pl-1 xl:pl-3">
 										<div className="bg-blue-revowall duration-150 group-hover:bg-green-revowall h-full text-white flex items-center justify-center p-1.5 md:p-2 xl:p-3">
 											<Flecha />
@@ -257,7 +265,7 @@ function IndexView() {
 									className="w-full h-full object-cover absolute top-0 left-0 duration-150 group-hover:scale-110"
 								/>
 							</div>
-							<Link to={constants.proyectosLink}>
+							<Link to={constants.proyectosLink} aria-label="Ir a proyectos">
 								<div className="bg-white absolute right-0 bottom-0 z-10 size-16 2xl:size-18 pt-3 pl-3">
 									<div className="bg-blue-revowall duration-150 group-hover:bg-green-revowall h-full text-white flex items-center justify-center p-3">
 										<Flecha />
@@ -279,6 +287,7 @@ function IndexView() {
 							<div className="xl:w-3/7 cursor-pointer flex items-center">
 								<button
 									type="button"
+									aria-label="Testimonio anterior"
 									className="size-12 2xl:size-20 testimony-prev-button cursor-pointer hover:scale-110 duration-150"
 								>
 									<FlechaLeft />
@@ -287,6 +296,7 @@ function IndexView() {
 							<div className="xl:w-3/7 cursor-pointer flex items-center">
 								<button
 									type="button"
+									aria-label="Siguiente Testimonio"
 									className="size-12 2xl:size-20 testimony-next-button cursor-pointer hover:scale-110 duration-150"
 								>
 									<FlechaRight />

@@ -74,7 +74,7 @@ function HeroSection({
 					)}
 				</div>
 				{imgOver ? (
-					<div className="w-full xl:w-2/5 h-full relative xl:absolute right-0 bottom-0 pt-4 flex justify-center xl:justify-end">
+					<div className="w-full min-h-[300px] xl:w-2/5 h-full relative xl:absolute right-0 bottom-0 pt-4 flex justify-center xl:justify-end">
 						<img
 							src={imgOver}
 							alt="Revowall"

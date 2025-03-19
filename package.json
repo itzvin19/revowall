@@ -15,6 +15,7 @@
     "leaflet-defaulticon-compatibility": "^0.1.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-helmet-async": "^2.0.5",
     "react-leaflet": "^5.0.0",
     "react-router": "^7.3.0",
     "swiper": "^11.2.5",

@@ -1,10 +1,18 @@
 import { Link } from "react-router";
 import HeroSection from "../components/HeroSection";
 import { constants } from "../data/constant";
+import { Helmet } from "react-helmet-async";
 
 function NosotrosView() {
 	return (
 		<>
+			<Helmet>
+				<title>Nosotros | Revowall</title>
+				<meta
+					name="description"
+					content="RevoWall: un equipo de expertos en Drywall Americano. Con años de experiencia, nos dedicamos a ofrecer soluciones personalizadas y resultados impecables. Descubre quiénes somos"
+				/>
+			</Helmet>
 			<HeroSection
 				backgroundImg="/img/nosotros/Portada.webp"
 				showLinks={false}
@@ -36,7 +44,7 @@ function NosotrosView() {
 							Contáctanos
 						</div>
 					</Link>
-				</div>	
+				</div>
 			</section>
 			<section className="px-4 md:px-[8.33%] text-black-revowall py-16 xl:py-24 xl:text-lg relative">
 				<div className="flex flex-col xl:flex-row justify-between">

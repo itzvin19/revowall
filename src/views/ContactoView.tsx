@@ -3,11 +3,19 @@ import HeroSection from "../components/HeroSection";
 import { constants } from "../data/constant";
 import MapComponent from "../components/MapComponent";
 import useWindowSize from "../hooks/useWindowSize";
+import { Helmet } from "react-helmet-async";
 function ContactoView() {
 	const { width } = useWindowSize();
 
 	return (
 		<>
+			<Helmet>
+				<title>Proyectos | Revowall</title>
+				<meta
+					name="description"
+					content="Contacta a RevoWall, expertos en Drywall Americano. Obtén asesoramiento personalizado y solicita presupuestos para tus proyectos. ¡Estamos aquí para ayudarte!"
+				/>
+			</Helmet>
 			<HeroSection
 				showLinks={false}
 				backgroundImg="/img/contacto/ContactoCover.webp"

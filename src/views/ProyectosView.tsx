@@ -14,6 +14,7 @@ import { Link } from "react-router";
 import useWindowSize from "../hooks/useWindowSize";
 import FlipCard from "../components/proyecto/FlipCard";
 import FlipCardBack from "../components/proyecto/FlipCardBack";
+import { Helmet } from "react-helmet-async";
 
 function ProyectosView() {
 	const { width } = useWindowSize();
@@ -28,6 +29,13 @@ function ProyectosView() {
 
 	return (
 		<>
+			<Helmet>
+				<title>Proyectos | Revowall</title>
+				<meta
+					name="description"
+					content="RevoWall transforma espacios con proyectos de drywall y construcción. Ve nuestros trabajos realizados y descubre cómo creamos ambientes únicos y funcionales."
+				/>
+			</Helmet>
 			<HeroSection
 				showLinks={true}
 				backgroundImg="/img/proyectos/ProyectosRevowall.webp"
@@ -181,13 +189,18 @@ function ProyectosView() {
 					<div className="text-white font-bold text-[18px] 2xl:text-[31px] text-balance justify-center md:text-[25px] w-1/2 xl:w-5/8 flex pl-3">
 						<span className="text-center">
 							<span className="text-green-revowall">Solicita una </span>
-							 cotización gratis
+							cotización gratis
 						</span>
 					</div>
 					<div className="w-5/12 xl:w-3/8">
-						<Link to={constants.contactoLink} className="flex w-full xl:w-2/3 group">
+						<Link
+							to={constants.contactoLink}
+							className="flex w-full xl:w-2/3 group"
+						>
 							<div className="text-blue-revowall group-hover:scale-110 duration-150 xl:text-black bg-white text-xl py-1 md:py-3 px-2 xl:px-8 w-full flex justify-between items-center md:max-xl:justify-center xl:justify-center md:max-xl:gap-6 xl:gap-6">
-								<span className="text-[16px] 2xl:text-2xl duration-150 group-hover:text-blue-revowall">Contáctanos</span>
+								<span className="text-[16px] 2xl:text-2xl duration-150 group-hover:text-blue-revowall">
+									Contáctanos
+								</span>
 								<div className="h-5 w-5 rotate-[39deg] duration-150 group-hover:text-blue-revowall">
 									<Flecha />
 								</div>
