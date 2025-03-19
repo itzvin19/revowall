@@ -21,7 +21,7 @@ function ProyectosView() {
 	const cardsPerView = width < 768 ? 1 : 2;
 
 	const groupedProyectos = [];
-	const groupedCasosExitos = [];
+	// const groupedCasosExitos = [];
 	for (let i = 0; i < proyectos.length; i += cardsPerView) {
 		groupedProyectos.push(proyectos.slice(i, i + cardsPerView));
 	}
