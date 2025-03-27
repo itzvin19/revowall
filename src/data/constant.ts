@@ -1,7 +1,7 @@
 export const constants = {
     correo:"correo@gmail.com",
-    telefono:"+51 987 654 321",
-    whatsappLink:"/",
+    telefono:"+51 933 409 002",
+    whatsappLink:"https://wa.me/51933409002",
     facebookLink:"/",
     instagramLink:"/",
     tiktokLink:"/",
@@ -9,5 +9,5 @@ export const constants = {
     serviciosLink:"/servicios",
     proyectosLink:"/proyectos",
     contactoLink:"/contacto",
-    ubicacion:"La que sale en el uberoasdnoj asjdnaojsd"
+    ubicacion:"Av. Santísima Cruz 151, S.M.P., Lima, Perú"
 };

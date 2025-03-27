@@ -16,7 +16,7 @@ function LandingLayout() {
 			<MenuMobile />
 			<Link
 				to={constants.whatsappLink}
-				className="w-fit z-40 mt-24 hidden xl:flex fixed bottom-5 right-5 border-2 border-green-revowall"
+				className="w-fit z-40 mt-24 hidden xl:flex  hover:scale-105 duration-150 shadow-2xl focus:shadow-none fixed bottom-5 right-5 border-2 border-green-revowall"
 			>
 				<div className="w-1/3 p-2 2xl:p-3 shadow-xl flex items-center justify-center bg-green-revowall">
 					<img
@@ -119,7 +119,7 @@ function LandingLayout() {
 						<div className="w-2/3 xl:w-1/5 flex flex-col gap-8">
 							<div className="flex flex-col gap-4 w-full">
 								<img
-									src="/favicon.svg"
+									src="/img/logoWhite.svg"
 									alt="Logo de Revowall"
 									className="w-1/2 xl:w-5/6 h-full"
 								/>

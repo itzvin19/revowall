@@ -42,7 +42,7 @@ function MenuMobile() {
 			>
 				<div className="w-1/2">
 					<img
-						src="/favicon.svg"
+						src="/img/logoWhite.svg"
 						alt="Logo de Revowall"
 						className="w-full h-full"
 					/>

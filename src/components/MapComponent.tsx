@@ -11,13 +11,13 @@ L.Icon.Default.mergeOptions({
 	shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
 });
 
-const position: L.LatLngExpression = [-12.0564, -77.0428]; // Coordenadas de Lima, Perú
+const position: L.LatLngExpression = [-11.9436725,-77.0890609]; // Coordenadas de Lima, Perú
 
 const MapComponent: React.FC = () => {
 	return (
 		<MapContainer
 			center={position}
-			zoom={13}
+			zoom={16}
 			className="h-[250px] xl:h-[350px] w-full z-50"
 			scrollWheelZoom={true}
 		>
