@@ -1,5 +1,5 @@
 export const constants = {
-    correo:"correo@gmail.com",
+    correo:"contacto@revowall.com",
     telefono:"+51 933 409 002",
     whatsappLink:"https://wa.me/51933409002",
     facebookLink:"/",
