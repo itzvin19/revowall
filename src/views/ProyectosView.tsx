@@ -14,9 +14,15 @@ import { Link } from "react-router";
 import useWindowSize from "../hooks/useWindowSize";
 import FlipCard from "../components/proyecto/FlipCard";
 import FlipCardBack from "../components/proyecto/FlipCardBack";
-import { Helmet } from "react-helmet-async";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 function ProyectosView() {
+	usePageMeta({
+		title: 'Proyectos | Revowall',
+		description:
+			'RevoWall transforma espacios con proyectos de drywall y construcción. Ve nuestros trabajos realizados y descubre cómo creamos ambientes únicos y funcionales.',
+	})
+
 	const { width } = useWindowSize();
 
 	const cardsPerView = width < 768 ? 1 : 2;
@@ -29,13 +35,6 @@ function ProyectosView() {
 
 	return (
 		<>
-			<Helmet>
-				<title>Proyectos | Revowall</title>
-				<meta
-					name="description"
-					content="RevoWall transforma espacios con proyectos de drywall y construcción. Ve nuestros trabajos realizados y descubre cómo creamos ambientes únicos y funcionales."
-				/>
-			</Helmet>
 			<HeroSection
 				showLinks={true}
 				backgroundImg="/img/proyectos/ProyectosRevowall.webp"

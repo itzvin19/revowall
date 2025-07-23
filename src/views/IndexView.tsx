@@ -20,18 +20,17 @@ import AtencionPersonalizada from "../icons/AtencionPersonalizada";
 import Compromiso from "../icons/Compromiso";
 import Experiencia from "../icons/Experiencia";
 import Garantias from "../icons/Garantias";
-import { Helmet } from "react-helmet-async";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 function IndexView() {
+usePageMeta({
+	  title: 'Inicio | RevoWall',
+  description:
+	'RevoWall: Expertos en Drywall Americano. Transformamos tus espacios con calidad y precisión. Soluciones personalizadas para proyectos residenciales y comerciales. ¡Contáctanos!',
+})
+
 	return (
 		<>
-			<Helmet>
-				<title>Inicio | RevoWall</title>
-				<meta
-					name="description"
-					content="RevoWall: Expertos en Drywall Americano. Transformamos tus espacios con calidad y precisión. Soluciones personalizadas para proyectos residenciales y comerciales. ¡Contáctanos!"
-				/>
-			</Helmet>
 			<HeroSection
 				backgroundImg="/img/index/IndexCover.webp"
 				showLinks={true}

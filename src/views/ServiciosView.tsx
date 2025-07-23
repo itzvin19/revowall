@@ -2,18 +2,17 @@ import { Link } from "react-router";
 import HeroSection from "../components/HeroSection";
 import ServicioCard from "../components/servicios/ServicioCard";
 import { constants } from "../data/constant";
-import { Helmet } from "react-helmet-async";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 function ServiciosView() {
+
+	usePageMeta({
+		title: 'Servicios | Revowall',
+		description:
+			'RevoWall: Construcción integral a tu alcance. Drywall, techos acústicos, pintura, electricidad y más. Soluciones completas para proyectos residenciales y comerciales.',
+	})
 	return (
 		<>
-			<Helmet>
-				<title>Servicios | Revowall</title>
-				<meta
-					name="description"
-					content="RevoWall: Construcción integral a tu alcance. Drywall, techos acústicos, pintura, electricidad y más. Soluciones completas para proyectos residenciales y comerciales."
-				/>
-			</Helmet>
 			<HeroSection
 				backgroundImg="/img/servicios/ServicesCover.webp"
 				showLinks={true}

@@ -1,18 +1,17 @@
 import { Link } from "react-router";
 import HeroSection from "../components/HeroSection";
 import { constants } from "../data/constant";
-import { Helmet } from "react-helmet-async";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 function NosotrosView() {
+  usePageMeta({
+	title: 'Nosotros | Revowall',
+	description:
+	  'RevoWall: un equipo de expertos en Drywall Americano. Con años de experiencia, nos dedicamos a ofrecer soluciones personalizadas y resultados impecables. Descubre quiénes somos',
+  });
+
 	return (
 		<>
-			<Helmet>
-				<title>Nosotros | Revowall</title>
-				<meta
-					name="description"
-					content="RevoWall: un equipo de expertos en Drywall Americano. Con años de experiencia, nos dedicamos a ofrecer soluciones personalizadas y resultados impecables. Descubre quiénes somos"
-				/>
-			</Helmet>
 			<HeroSection
 				backgroundImg="/img/nosotros/Portada.webp"
 				showLinks={false}
