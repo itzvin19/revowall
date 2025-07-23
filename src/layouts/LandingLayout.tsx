@@ -8,6 +8,7 @@ import { constants } from "../data/constant";
 import MenuMobile from "../components/MenuMobile";
 import { useIndexStore } from "../store";
 import NavLinkHover from "../components/NavLinkHover";
+import { ToastContainer } from "react-toastify";
 
 function LandingLayout() {
 	const { openMenu } = useIndexStore();
@@ -192,6 +193,7 @@ function LandingLayout() {
 					</div>
 				</div>
 			</footer>
+			<ToastContainer></ToastContainer>
 		</>
 	);
 }

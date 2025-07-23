@@ -4,8 +4,51 @@ import { constants } from "../data/constant";
 import MapComponent from "../components/MapComponent";
 import useWindowSize from "../hooks/useWindowSize";
 import { Helmet } from "react-helmet-async";
+import {useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import { useState } from "react";
+
 function ContactoView() {
 	const { width } = useWindowSize();
+	const {handleSubmit, register, formState: { errors }, reset
+	} = useForm<ContactForm>();
+	const [isLoading,setIsLoading]=useState(false);
+	
+
+	type ContactForm={
+		txtName: string;
+		txtCompany: string;
+		txtPhone: string;
+		txtMail: string;
+		txtService: string;
+		txtMessage: string;
+	}
+
+	const handleForm = async (e:ContactForm)=>{
+		try {
+			const response = await fetch("/api/send-email", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(e),
+			});
+
+			const result = await response.json();
+			setIsLoading(false);
+			if (result.success) {
+				toast.success("✅ Correo enviado ");
+				reset();
+			} else {
+				toast.success("❌ Ocurrió un error :(");
+			}
+		} catch (e
+		) {
+			toast.error("Error al enviar el formulario, por favor intente más tarde.");
+		}
+	}
+
+
 
 	return (
 		<>
@@ -107,7 +150,7 @@ function ContactoView() {
 							<span className="text-green-revowall">Hablemos</span> sobre tu
 							proyecto
 						</span>
-						<form className="w-full flex flex-col px-5 py-8 xl:p-0 gap-5 shadow-lg xl:shadow-none border-t-8 xl:border-t-0 border-blue-revowall  2xl:text-lg">
+						<form className="w-full flex flex-col px-5 py-8 xl:p-0 gap-5 shadow-lg xl:shadow-none border-t-8 xl:border-t-0 border-blue-revowall  2xl:text-lg" onSubmit={handleSubmit(handleForm)}>
 							<div className="w-full flex flex-col xl:flex-row gap-4">
 								<div className="flex flex-col xl:w-1/2">
 									<label className="flex flex-col gap-2">
@@ -116,8 +159,11 @@ function ContactoView() {
 											type="text"
 											className="bg-gray-revowall py-2 px-3"
 											placeholder="Juan"
+											{...register("txtName", { required: "Por favor ingrese su nombre" } )}
 										/>
 									</label>
+									{errors.txtName && (
+										<span className="text-red-500 text-sm"/>)}
 								</div>
 								<div className="flex flex-col xl:w-1/2">
 									<label className="flex flex-col gap-2">
@@ -126,6 +172,7 @@ function ContactoView() {
 											type="text"
 											className="bg-gray-revowall py-2 px-3"
 											placeholder="Compañia S.A.C."
+											{...register("txtCompany", { required: "Por favor ingrese el nombre de su compañia" , maxLength: { value: 50, message: "El nombre de la compañia no puede exceder los 50 caracteres" } })}
 										/>
 									</label>
 								</div>
@@ -138,6 +185,7 @@ function ContactoView() {
 											type="text"
 											className="bg-gray-revowall py-2 px-3"
 											placeholder="987654321"
+											{...register("txtPhone", { required: "Por favor ingrese su número de celular", pattern: { value: /^[0-9]+$/, message: "El número de celular debe contener solo números" }, maxLength: { value: 9, message: "El número de celular debe tener 9 dígitos" } })}
 										/>
 									</label>
 								</div>
@@ -148,6 +196,7 @@ function ContactoView() {
 											type="text"
 											className="bg-gray-revowall py-2 px-3"
 											placeholder="correo@correo.com"
+											{...register("txtMail", { required: "Por favor ingrese su correo electrónico", pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Por favor ingrese un correo electrónico válido" } })}
 										/>
 									</label>
 								</div>
@@ -159,6 +208,7 @@ function ContactoView() {
 										type="text"
 										className="bg-gray-revowall py-2 px-3"
 										placeholder="Contrucción ligera en DryWall"
+										{...register("txtService", { required: "Por favor ingrese el servicio que desea" })}
 									/>
 								</label>
 							</div>
@@ -168,14 +218,17 @@ function ContactoView() {
 									<textarea
 										className="bg-gray-revowall py-2 px-3 min-h-[120px]"
 										placeholder="Mensaje"
+										{...register("txtMessage", { required: "Por favor ingrese su mensaje", maxLength: { value: 500, message: "El mensaje no puede exceder los 500 caracteres" } })}
 									/>
 								</label>
 							</div>
-							<input
-								type="submit"
-								value="Enviar"
+							<button
+							type="submit"
+							aria-label="Enviar mensaje"
 								className="bg-green-revowall p-2 xl:p-3 text-white font-bold cursor-pointer duration-150 hover:bg-blue-revowall"
-							/>
+							disabled={isLoading}>
+							{isLoading ? "Enviando..." : "Enviar mensaje"}
+							</button>
 						</form>
 					</div>
 				</div>
