@@ -4,7 +4,7 @@ export const constants = {
     whatsappLink:"https://wa.me/51933409002",
     facebookLink:"/",
     instagramLink:"/",
-    tiktokLink:"/",
+    tiktokLink:"https://www.tiktok.com/@revowall.soluciones",
     nosotrosLink:"/nosotros",
     serviciosLink:"/servicios",
     proyectosLink:"/proyectos",
