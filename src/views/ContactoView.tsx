@@ -31,6 +31,8 @@ function ContactoView() {
 
 	const handleForm = async (e:ContactForm)=>{
 		try {
+			
+			setIsLoading(true);
 			const response = await fetch("/api/send-email", {
 				method: "POST",
 				headers: {
