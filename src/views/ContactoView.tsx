@@ -156,12 +156,12 @@ function ContactoView() {
 										<input
 											type="text"
 											className="bg-gray-revowall py-2 px-3"
-											placeholder="Juan"
+											placeholder="Nombre"
 											{...register("txtName", { required: "Por favor ingrese su nombre" } )}
 										/>
 									</label>
 									{errors.txtName && (
-										<span className="text-red-500 text-sm"/>)}
+										<span className="text-red-500 text-sm">{errors?.txtName.message}</span>)}
 								</div>
 								<div className="flex flex-col xl:w-1/2">
 									<label className="flex flex-col gap-2">
@@ -169,10 +169,12 @@ function ContactoView() {
 										<input
 											type="text"
 											className="bg-gray-revowall py-2 px-3"
-											placeholder="Compañia S.A.C."
+											placeholder="Compañia"
 											{...register("txtCompany", { required: "Por favor ingrese el nombre de su compañia" , maxLength: { value: 50, message: "El nombre de la compañia no puede exceder los 50 caracteres" } })}
 										/>
 									</label>
+									{errors.txtCompany && (
+										<span className="text-red-500 text-sm">{errors?.txtCompany.message}</span>)}
 								</div>
 							</div>
 							<div className="w-full flex-col xl:flex-row flex gap-4">
@@ -182,10 +184,12 @@ function ContactoView() {
 										<input
 											type="text"
 											className="bg-gray-revowall py-2 px-3"
-											placeholder="987654321"
+											placeholder="Celular"
 											{...register("txtPhone", { required: "Por favor ingrese su número de celular", pattern: { value: /^[0-9]+$/, message: "El número de celular debe contener solo números" }, maxLength: { value: 9, message: "El número de celular debe tener 9 dígitos" } })}
 										/>
 									</label>
+									{errors.txtPhone && (
+										<span className="text-red-500 text-sm">{errors?.txtPhone.message}</span>)}
 								</div>
 								<div className="flex flex-col xl:w-1/2">
 									<label className="flex flex-col gap-2">
@@ -197,6 +201,8 @@ function ContactoView() {
 											{...register("txtMail", { required: "Por favor ingrese su correo electrónico", pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Por favor ingrese un correo electrónico válido" } })}
 										/>
 									</label>
+									{errors.txtMail && (
+										<span className="text-red-500 text-sm">{errors?.txtMail.message}</span>)}
 								</div>
 							</div>
 							<div className="flex flex-col w-full">
@@ -209,6 +215,8 @@ function ContactoView() {
 										{...register("txtService", { required: "Por favor ingrese el servicio que desea" })}
 									/>
 								</label>
+								{errors.txtService && (
+									<span className="text-red-500 text-sm">{errors?.txtService.message}</span>)}
 							</div>
 							<div className="flex flex-col w-full">
 								<label className="flex flex-col gap-2">
@@ -219,6 +227,8 @@ function ContactoView() {
 										{...register("txtMessage", { required: "Por favor ingrese su mensaje", maxLength: { value: 500, message: "El mensaje no puede exceder los 500 caracteres" } })}
 									/>
 								</label>
+								{errors.txtMessage && (
+									<span className="text-red-500 text-sm">{errors?.txtMessage.message}</span>)}
 							</div>
 							<button
 							type="submit"
