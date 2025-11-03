@@ -27,7 +27,7 @@ function ProyectoCard({ proyecto, alternate }: ProyectoCardProps) {
 				<div className="w-12 hidden xl:absolute bottom-0 right-0 text-green-revowall">
 					<ProyectoSeparator />
 				</div>
-				<p className="font-bold text-blue-revowall">{proyecto.title}</p>
+				<p className="font-bold text-blue-revowall text-balance">{proyecto.title}</p>
 				<ul className="flex flex-col gap-3">
 					{proyecto.caracteristicas.map((x) => (
 						<li key={x} className="flex items-center gap-4">

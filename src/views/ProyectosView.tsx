@@ -15,6 +15,8 @@ import useWindowSize from "../hooks/useWindowSize";
 import FlipCard from "../components/proyecto/FlipCard";
 import FlipCardBack from "../components/proyecto/FlipCardBack";
 import { usePageMeta } from "../hooks/usePageMeta";
+import { CasoExito } from "../types";
+import { casosExito } from "../data/casosExito";
 
 function ProyectosView() {
 	usePageMeta({
@@ -106,30 +108,16 @@ function ProyectosView() {
 				</h2>
 				{width > 1280 ? (
 					<div className="grid w-full grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-						<FlipCard
-							frontContent={<FlipCardFront />}
-							backContent={<FlipCardBack />}
-						/>
-						<FlipCard
-							frontContent={<FlipCardFront />}
-							backContent={<FlipCardBack />}
-						/>
-						<FlipCard
-							frontContent={<FlipCardFront />}
-							backContent={<FlipCardBack />}
-						/>
-						<FlipCard
-							frontContent={<FlipCardFront />}
-							backContent={<FlipCardBack />}
-						/>
-						<FlipCard
-							frontContent={<FlipCardFront />}
-							backContent={<FlipCardBack />}
-						/>
-						<FlipCard
-							frontContent={<FlipCardFront />}
-							backContent={<FlipCardBack />}
-						/>
+						{
+							casosExito.map((caso, index) =>
+								<FlipCard
+									frontContent={<FlipCardFront imgURL={caso.img} />}
+									backContent={<FlipCardBack title={caso.title} description={caso.description}/>}
+									// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+									key={index}
+								/>
+							)
+						}
 					</div>
 				) : (
 					<Swiper
@@ -141,20 +129,20 @@ function ProyectosView() {
 						pagination={{ clickable: true, el: ".pagination" }}
 						className="w-full"
 					>
-						{groupedProyectos.map((grupo, index) => (
+						{casosExito.map((caso, index) => (
 							<SwiperSlide
 								// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 								key={index}
 								className="flex! gap-6 justify-center"
 							>
-								{grupo.map((_, i) => (
+								{
 									<FlipCard
-										frontContent={<FlipCardFront />}
+										frontContent={<FlipCardFront imgURL={caso.img} />}
 										backContent={<FlipCardBack />}
 										// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-										key={i}
+										key={index}
 									/>
-								))}
+								}
 							</SwiperSlide>
 						))}
 						<div className="pagination flex gap-2 mt-6 justify-center" />

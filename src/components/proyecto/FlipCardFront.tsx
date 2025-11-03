@@ -1,10 +1,14 @@
-function FlipCardFront() {
+interface FlipCardFrontProps {
+	imgURL: string;
+}
+
+function FlipCardFront({ imgURL }: FlipCardFrontProps) {
 	return (
 		<div
 			className="w-full h-full bg-blue-revowall flex p-7 justify-center relative items-center"
 			style={{
 				backgroundImage:
-					"linear-gradient(rgba(2, 33, 97, 0.7),rgba(2, 33, 97, 0.7)), url('/img/proyectos/casosExitoImg/2147694739.webp')",
+					`linear-gradient(rgba(2, 33, 97, 0.7),rgba(2, 33, 97, 0.7)), url('${imgURL || "/img/proyectos/casosExitoImg/2147694739.webp"}')`,
 				backgroundSize: "cover",
 				objectPosition: "center",
 			}}

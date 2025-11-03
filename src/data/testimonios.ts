@@ -2,9 +2,9 @@ import type { Testimonio } from "../types";
 
 export const testimonios: Testimonio[] = [
   {
-    nombre: "María López",
-    trabajo: "Instalación de Drywall",
-    testimonio: "El equipo fue muy profesional y eficiente. Terminaron la instalación de drywall antes de lo previsto y el resultado fue excelente. ¡Muy recomendados!",
+    nombre: "Adrián López",
+    trabajo: "Remodelación de Departamento",
+    testimonio: "Ha sido un trabajo hecho a la medida, realizado con gran dedicación y excelentes resultados. Todo quedó muy bien finalizado y la calidad está completamente garantizada. Sin duda, pueden tener por seguro que volveré a contratarlos nuevamente",
   },
   {
     nombre: "Carlos Pérez",

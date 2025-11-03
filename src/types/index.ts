@@ -9,3 +9,9 @@ export type Testimonio = {
 	trabajo: string;
 	testimonio: string;
 };
+
+export type CasoExito = {
+	title: string;
+	img: string;
+	description: string;
+};

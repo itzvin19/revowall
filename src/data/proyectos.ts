@@ -3,38 +3,32 @@ import type { Proyecto } from "../types";
 export const proyectos: Proyecto[] = [
 	{
 		img: "/img/proyectos/proyectosImg/2149366688.webp",
-		title: "Divisiones en oficinas corporativas",
+		title: "Montaje de módulos para salones en el colegio P.I.N.",
 		caracteristicas: [
-			"Paneles de drywall con acabado premium",
-			"Aislamiento acústico para privacidad",
-			"Instalación de puertas corredizas",
+			"Levantamiento estructural con drywall",
+			"Instalación eléctrica y de iluminación",
+			"Trabajo de pintura y acabados",
+			"Levantamiento de techos y suelos",
+
 		],
 	},
 	{
-		img: "/img/proyectos/proyectosImg/1553.webp",
-		title: "Falsos techos con iluminación LED",
+		img: "/img/proyectos/proyectosImg/colegio-santa-rosa-revowall.webp",
+		title: "Levantamiento de techos en el colegio Santa Rosa",
 		caracteristicas: [
-			"Estructura resistente y liviana",
-			"Integración de luces LED empotradas",
-			"Acabado en pintura mate antihumedad",
+			"Instalación de techos",
+			"Trabajo de pintura y acabados",
+			"Instalación eléctrica y de iluminación",
 		],
 	},
 	{
-		img: "/img/proyectos/proyectosImg/593.webp",
-		title: "Remodelación de interiores en viviendas",
+		img: "/img/proyectos/proyectosImg/remodelacion-departamento-revowall.webp",
+		title: "Remodelación de departamento en San Miguel",
 		caracteristicas: [
-			"Paredes de drywall para redistribución de espacios",
-			"Acabado con pintura de alta duración",
-			"Aislamiento térmico para mayor confort",
-		],
-	},
-	{
-		img: "/img/proyectos/proyectosImg/1553.webp",
-		title: "Construcción de módulos comerciales",
-		caracteristicas: [
-			"Montaje rápido y eficiente",
-			"Acabado en texturizado moderno",
-			"Estructura reforzada con perfilería metálica",
+			"Trabajo de pintura y acabados",
+			"Reemplazo de pisos",
+			"Elaboración de molduras en paredes",
+			"Instalación de iluminaciones"
 		],
 	},
 ];

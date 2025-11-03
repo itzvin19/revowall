@@ -23,11 +23,11 @@ import Garantias from "../icons/Garantias";
 import { usePageMeta } from "../hooks/usePageMeta";
 
 function IndexView() {
-usePageMeta({
-	  title: 'Inicio | RevoWall',
-  description:
-	'RevoWall: Expertos en Drywall Americano. Transformamos tus espacios con calidad y precisión. Soluciones personalizadas para proyectos residenciales y comerciales. ¡Contáctanos!',
-})
+	usePageMeta({
+		title: 'Inicio | RevoWall',
+		description:
+			'RevoWall: Expertos en Drywall Americano. Transformamos tus espacios con calidad y precisión. Soluciones personalizadas para proyectos residenciales y comerciales. ¡Contáctanos!',
+	})
 
 	return (
 		<>
@@ -256,22 +256,26 @@ usePageMeta({
 								</Link>
 							</div>
 						</div>
-						<div className="hidden xl:block bg-green-600 aspect-[2/1] relative overflow-hidden group">
-							<div className="w-full h-full overflow-hidden relative">
-								<img
-									src={proyectos[3].img}
-									alt={proyectos[3].img}
-									className="w-full h-full object-cover absolute top-0 left-0 duration-150 group-hover:scale-110"
-								/>
-							</div>
-							<Link to={constants.proyectosLink} aria-label="Ir a proyectos">
-								<div className="bg-white absolute right-0 bottom-0 z-10 size-16 2xl:size-18 pt-3 pl-3">
-									<div className="bg-blue-revowall duration-150 group-hover:bg-green-revowall h-full text-white flex items-center justify-center p-3">
-										<Flecha />
+						{
+							proyectos[3] && (
+
+								<div className="hidden xl:block bg-green-600 aspect-[2/1] relative overflow-hidden group">
+									<div className="w-full h-full overflow-hidden relative">
+										<img
+											src={proyectos[3].img}
+											alt={proyectos[3].img}
+											className="w-full h-full object-cover absolute top-0 left-0 duration-150 group-hover:scale-110"
+										/>
 									</div>
+									<Link to={constants.proyectosLink} aria-label="Ir a proyectos">
+										<div className="bg-white absolute right-0 bottom-0 z-10 size-16 2xl:size-18 pt-3 pl-3">
+											<div className="bg-blue-revowall duration-150 group-hover:bg-green-revowall h-full text-white flex items-center justify-center p-3">
+												<Flecha />
+											</div>
+										</div>
+									</Link>
 								</div>
-							</Link>
-						</div>
+							)}
 					</div>
 				</div>
 			</section>

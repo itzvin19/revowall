@@ -23,7 +23,7 @@ function Testimonio({ testimonio, alternateColor }: TestimonioProps) {
 				<span className="font-bold text-lg">{testimonio.nombre}</span>
 				<span className="text-lg">{testimonio.trabajo}</span>
 			</div>
-			<p className="text-sm xl:text-[16px] leading-relaxed text-balance">
+			<p className="text-sm xl:text-[16px] leading-relaxed text-balance max-w-prose">
 				{testimonio.testimonio}
 			</p>
 		</div>
