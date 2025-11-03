@@ -15,7 +15,6 @@ import useWindowSize from "../hooks/useWindowSize";
 import FlipCard from "../components/proyecto/FlipCard";
 import FlipCardBack from "../components/proyecto/FlipCardBack";
 import { usePageMeta } from "../hooks/usePageMeta";
-import { CasoExito } from "../types";
 import { casosExito } from "../data/casosExito";
 
 function ProyectosView() {
